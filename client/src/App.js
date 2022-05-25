@@ -37,8 +37,8 @@ function App() {
               <Route path="/" element={<Home></Home>} />
               <Route path="/login" element={<Login></Login>} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/thought" element={<Singlethought />} />
+              <Route path="/profile/:username?" element={<Profile />} />
+              <Route path="/thought/:id" element={<Singlethought />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </div>
