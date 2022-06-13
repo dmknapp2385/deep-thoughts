@@ -36,9 +36,8 @@ export const QUERY_THOUGHT = gql`
   }
 `;
 
-
 export const QUERY_USER = gql`
-  query user($username: String!){
+  query user($username: String!) {
     user(username: $username) {
       _id
       username
@@ -55,4 +54,47 @@ export const QUERY_USER = gql`
         reactionCount
       }
     }
-  }`
+  }
+`;
+
+export const QUERY_ME = gql`
+{
+  me {
+    _id
+    username
+    email
+    thoughts {
+      _id
+      createdAt
+      thoughtText
+      reactionCount
+      reactions {
+        _id
+        createdAt
+        reactionBody
+        username
+      }
+    }
+    friendCount
+    friends {
+      _id
+      username
+    }
+  }
+}
+`;
+
+export const QUERY_ME_BASIC = gql`
+{
+  me {
+    _id
+    username
+    email
+    friendCount
+    friends {
+      _id
+      username
+    }
+  }
+}
+`;

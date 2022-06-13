@@ -3,7 +3,6 @@ import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
-  crateHttpLink,
   createHttpLink
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -49,6 +48,7 @@ function App() {
               <Route path="/login" element={<Login></Login>} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/profile/:username" element={<Profile />} />
+              <Route path="/profile/" element={<Profile />} />
               <Route path="/thought/:id" element={<Singlethought />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
